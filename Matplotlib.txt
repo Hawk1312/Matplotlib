@@ -1,0 +1,70 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+
+x=[10,20,30]
+y=[100,200,300]
+
+plt.plot(x,y)
+plt.grid()
+plt.show()
+
+data = {
+    "salary": [10000, 20200, 35000, 45000, 6000, 67000, 78000, 89000, 91000, 10200]
+}
+
+df.shape
+
+#line plot
+plt.plot(df["salary"], color = "black" ,marker='o',linestyle=":",linewidth="2")
+plt.grid()
+plt.show()
+
+#Histogram
+plt.hist(df["salary"],bins=5,color="pink")
+plt.show()
+
+#boxplot
+plt.boxplot(df["salary"])
+plt.show()
+
+df["dept"]=[ "HR",
+        "Finance",
+        "IT",
+        "Marketing",
+        "Sales",
+        "IT",
+        "Engineering",
+        "HR",
+        "Finance",
+        "HR"]
+df.head()        
+
+#pie chart
+count=df["dept"].value_counts()
+count
+
+explode = [0.1 if i == 0 else 0 for i in range(len(count))]
+plt.pie(count,labels=count.index, autopct="%1.1f", explode=explode)
+plt.axis("equal")
+plt.show()
+
+#countplot
+plt.bar(count.index,count,color=["lightpink","skyblue","lightgreen"])
+plt.show()
+
+#comparision two data by plot
+df["Age"]=[25, 30, 28, 35, 32, 27, 40, 29, 31, 38]
+df.head()
+
+#Scatter plot
+plt.scatter(df["salary"], df["Age"], color="orange")
+plt.show()
+
+#line plot
+plt.plot(df["salary"],df["Age"],color="skyblue", marker="o")
+plt.grid()
+plt.show()
+
+#Bar chart
+plt.bar(df["salary"],df["Age"],color="lightgreen",align="center")
+plt.show()
